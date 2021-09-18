@@ -1,0 +1,31 @@
+Study Design/CodeBook
+
+Data from the Human Activity Recognition Using Smartphones Dataset was used to conduct summaries.
+The dataset reference is:
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+
+The dataset contained measurements from 30 participants who conducted walking, walking up stairs, walking down stairs, sitting, standing, and laying activities. Data was measured/collected using smartphones. The data collected was processed using filters and some measurements were furthered broken down to specify the body and gravity acceleration parameters for both time and frequency. 
+
+The dataset included
+
+activity_labels.txt - contains a file with the 6 activities performed during study
+features.txt - contains a list of 561 different measurements
+subject_test.txt - contains list of the participants who were considered test subjects
+subject_train.txt - contains list of participants who were considered training subjects
+X_test.txt - contains the data from the test participants
+X_train.txt - contains the data from the training participants
+y_test.txt - contains the respective activities from the test participants
+y_train.txt - contains the respective activities from the training participants
+
+run.analysis.R - script that reads in the variables from each data set; merges the subjects, and activities performed; tidys the data to remove columns and rows based on the following assumptions:
+The only measurements of interest are the mean and standard deviations for each axis for the body acceleration time & frequency, gravity acceleration time, body acceleration jerk time & frequency, body gyroscope jerk time, and body gyroscope time & frequency. 
+Participants conducted activities multiple times; the data was reduced to account for average time/frequency per participant per activity.
+
+The data output from run.analysis.R  - alldata.csv is 180 rows by 50 columns. the time domain columns are in millisecs and frequency domain columns are in Hz.
+
+
